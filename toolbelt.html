@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>DNS Troubleshooting Toolbelt - DNS Checker Tool Aggregate</title>
+    <!-- Dan Schatz-Miller -->
+    <meta content="noindex, nofollow" name="robots">
+    <style>
+    body {
+        /*background-image:url('https://googledrive.com/host/0Bwmnws0fML1DclRrRHhRRmp2TlU/guide_pro_tip.png');
+        background-size:150px auto;
+        background-repeat:no-repeat;*/
+        padding: 30px;
+        background-color: #fff;
+        color:#000;
+        font-family: Arial;
+    }
+    #menu_box {
+        background-color: rgba(255,255,255,1.0);
+        position: fixed;
+        margin: 0 auto;
+        left: 20px;
+        top: 0px;
+        width: 90%;
+        height: auto;
+
+        border: 1px solid #aaa;
+    }
+    #menu_hidden {
+        background-color: rgba(255,255,255,0.0);
+        position: fixed;
+        margin: 0 auto;
+        left: 20px;
+        top: 0px;
+        width: 90%;
+        height: auto;
+
+    }
+    #show_menu_button {
+        visibility: hidden;
+    }
+    .smallinfo {
+        font-size: 9px;
+        background-color: #fff;
+    }
+    a {
+        background-color: #fff;
+    }
+    h4 {
+        background-color: #fff;
+    }
+    </style>
+</head>
+
+<body>
+
+        <div id="menu_hidden">
+             <button id="show_menu_button" onclick="showMenu()">Show In-Page
+            Navigation Menu</button>
+
+             <div id="menu_box">
+                <!--<h4>In-Page Navigation <button id="hide_menu_button" onclick="hideMenu()">Hide In-Page
+                Navigation Menu</button></h4> -->
+
+                <input id="user_input" type="text">
+
+                <button onclick="useInput()">Search by IP or
+                domain</button>
+
+                <i class="smallinfo" title=
+                "ENABLES pre-population of search query to propagation checking links. Checks Nameservers when possible. Some Propagation Checkers have other useful functions when this checkbox is unchecked. Also populates the way back machine link in the Domain Tools example.">
+                Check to enable this search on Propagation Checkers: <input id=
+                "populate_propchkrs" title=
+                "ENABLES pre-population of search query to propagation checking links. Checks Nameservers when possible. Some Propagation Checkers have other useful functions when this checkbox is unchecked. Also populates the way back machine link in the Domain Tools example."
+                type="checkbox">
+                (mouseover for more info)</i>
+                <br />
+                <a href="#digwebinterface">Dig Web Interface</a> |
+                <a href="#mxtoolbox">MX Toolbox</a> |
+                <a href="#whois">Who.is</a> |
+                <a href="#myipms">MYIP.MS</a> |
+                <a href="#isitdown">IS IT DOWN RIGHT NOW?</a> |
+                <a href="#domaintools">Domain Tools</a> |
+                <a href="#intodns">Into DNS</a> |
+                <a href="#wix">Wix</a> |
+                <a href="#propagationcheckers">Propagation Checkers</a> |
+                <button id="hide_menu_button" onclick="hideMenu()">Hide In-Page
+                Navigation Menu</button>
+
+            </div>
+        </div>
+    <div id="pagewrapper">
+        <h1 id="top">DNS Troubleshooting Toolbelt</h1>
+               
+        <h3 id="current_check"></h3>
+
+        <p id="digwebinterface">DNS Checker Tool Aggregate</p>
+
+        <hr />
+
+        <h2>Dig Web Interface - Domain Record Checker</h2>
+
+        <p>Useful for the ability to query various nameservers including
+        authoritative to quickly check if records exist even when not
+        propagated.</p><br />
+
+        <p>The default search is for the host name's A records against all
+        available nameservers. Keep in mind that within the frame it is
+        possible to search for multiple host names at once with this tool as
+        well as checking other types of records and only with specific
+        nameservers.</p><iframe height="700" name="dig"
+        scrolling="yes" src="http://www.digwebinterface.com/" width=
+        "1500"></iframe> <a href="http://www.digwebinterface.com/" target=
+        "_blank" id="mxtoolbox">http://www.digwebinterface.com/</a>
+        <br />
+        <br />
+        <hr />
+
+        <h2>MX Toolbox - Domain Record Checker</h2>
+
+        <p>Useful for checking that MX records and especially spf records have
+        been created properly.</p><br />
+
+        <p>The default search is for the domain's mx records. Remember that
+        this tool can check other domain records as well, such as spf and
+        srv.</p><iframe height="700" name="mx" scrolling="yes"
+        src="http://mxtoolbox.com/" width="1500"></iframe> <a href=
+        "http://mxtoolbox.com/" target="_blank" id="whois">http://mxtoolbox.com/</a>
+        <br />
+        <br />
+        <h2>WHO.IS - Public Domain Database</h2>
+
+        <p>Useful for checking the status and ownership of a domain.</p><br />
+
+        <p>Remember that with some registrars such as godaddy, you will need to
+        get the company's internal who.is link from the bottom of the who.is
+        page to see any useful information.</p><iframe height="700" 
+        name="who" scrolling="yes" src="http://who.is/" width="1500"></iframe>
+        <a href="http://who.is/" target="_blank" id="myipms">http://who.is/</a>
+        <br />
+        <br />
+        <h2>MYIP.MS - Hosting Info, Websites and IP Database</h2>
+
+        <p>Useful for determining the owner of an ip address or the ip address
+        of a website.</p><iframe height="700" name="myip"
+        scrolling="yes" src="http://myip.ms/" width="1500"></iframe> <a href=
+        "http://myip.ms/" target="_blank" id=
+        "isitdown">http://myip.ms/</a>
+        <br />
+        <br />
+        <h2>IS IT DOWN RIGHT NOW?</h2>
+
+        <p>Check if a website is reachable.</p><iframe height="700" name="isitdown" scrolling="yes" src=
+        "http://www.isitdownrightnow.com/" width="1500"></iframe> <a href=
+        "http://www.isitdownrightnow.com/" target=
+        "_blank" id="domaintools">http://www.isitdownrightnow.com/</a>
+        <br />
+        <br />
+        <h2>Domain Tools</h2>
+
+        <p>Great for seeing if a domain was previously registered, if and how
+        many times the nameservers have been changed. Useful in determining if
+        other content was previously hosted at this domain.</p><br />
+
+        <p>Example: User is seeing unsafe content warning but just connected
+        the site. Might check to see if the domain was connected elsewhere
+        recently, then use <a href="http://archive.org/web/" id="wayback" name=
+        "wayback" target="_blank">the way back machine
+        (http://archive.org/web/)</a> to see what the website used to be and
+        why it might have been flagged as malicious.</p><iframe height="700" 
+        name="domaintools" scrolling="yes" src=
+        "http://whois.domaintools.com/" width="1500"></iframe> <a href=
+        "http://whois.domaintools.com/" target=
+        "_blank" id="intodns">http://whois.domaintools.com/</a>
+        <br />
+        <br />
+        <h2>Into DNS</h2>
+
+        <p>This tool checks many aspects of a domain and often returns useful
+        errors that can offer insight into the nature of DNS issues.</p><br />
+        <iframe height="700" name="intodns" scrolling="yes" src=
+        "http://www.intodns.com/" width="1500"></iframe> <a href=
+        "http://www.intodns.com/" target="_blank" id="wix">http://www.intodns.com/</a>
+        <br />
+        <br />
+        <hr />
+            
+        <h2>Wix.com Domain Troubleshooter</h2>
+        <p>Our own domain connection checker, often provides useful results. It's a flash app so you will need to enter the domain manually.</p>
+        <iframe width="1000" height="350" scrolling="yes" src="http://fb.flashquix.com/latest_ts/troubleshooter/iframe.php?frame=1&lang=ge&wmode=opaque"></iframe>
+        <hr id="propagationcheckers" />
+        <br />
+        <br />
+
+        <div>
+            <h2>12 DNS Propogation Checkers:</h2>
+
+            <p>Since there are many many servers around the world, when unsure
+            if changes to a domain's DNS are still propagating, it is important
+            to check multiple sources. The following are from <a href=
+            "http://www.quantawebdesign.com/domain-names/12-places-to-check-dns-propagation.html"
+            target=
+            "_blank">http://www.quantawebdesign.com/domain-names/12-places-to-check-dns-propagation.html</a></p>
+
+            <hr />
+
+            <p id="propchkrs"><b>1.</b> <a href=
+            "http://www.site24x7.com/check-website-availability.html" target=
+            "_blank">Site24x7</a><br />
+            - Checks 43 worldwide locations - you can choose to query all, or
+            just some of them.</p>
+            <hr>
+
+            <p><b>2.</b> <a href="http://www.whatsmydns.net/" id="whatsmydns"
+            name="whatsmydns" target="_blank">WhatsMyDNS</a><br />
+            - Queries 20 servers worldwide.</p>
+            <hr>
+
+            <p><b>3.</b> <a href="http://www.viewdns.info/propagation/" id=
+            "viewdns" name="viewdns" target="_blank">ViewDNS</a><br />
+            - Checks 19 servers worldwide.</p>
+            <hr>
+
+            <p><b>4.</b> <a href="http://ceipam.eu/en/dnslookup.php" id=
+            "ceipam" name="ceipam" target="_blank">Ceipam</a><br />
+            - Checks 18 servers worldwide, with options to check a custom IP,
+            and your own local DNS server.</p>
+            <hr>
+
+            <p><b>5.</b> <a href="http://checkdnspropagation.com/" target=
+            "_blank">CheckDNSpropagation</a><br />
+            - Checks a number of worldwide servers.</p>
+            <hr>
+
+            <p><b>6.</b> <a href=
+            "http://www.preshweb.co.uk/cgi-bin/dns-propagation-tracker.pl?" id=
+            "preshweb" name="preshweb" target="_blank">Preshweb</a><br />
+            - Offers a number of options for checking DNS records. A little
+            unreliable; some servers return no information.</p>
+            <hr>
+
+            <p><b>7.</b> <a href="http://www.mob.net/~ted/tools/dns.php3" id=
+            "mobnet" name="mobnet" target="_blank">Mob</a><br />
+            - Checks 19 servers, 15 of which are in the U.S.</p>
+            <hr>
+
+            <p><b>8.</b> <a href="http://www.nexcess.net/global-dns-checker/"
+            id="nexcess" name="nexcess" target="_blank">Nexcess</a><br />
+            - Looks up your DNS in 22 global locations.</p>
+            <hr>
+
+            <p><b>9.</b> <a href="http://just-ping.com/" id="justping" name=
+            "justping" target="_blank">Just-Ping</a><br />
+            - Checks 50 locations throughout the globe.</p>
+            <hr>
+
+            <p><b>10.</b> <a href=
+            "http://www.dnsunlimited.com/propagation_check" target=
+            "_blank">DNSUnlimited</a><br />
+            - Checks 13 servers worldwide.</p>
+            <hr>
+
+            <p><b>11.</b> <a href="http://propagatedyet.com" target=
+            "_blank">PropagatedYet</a><br />
+            - fill in the domain and new IP and it'll give you a "yes" or "no"
+            answer to the question, "Propagated Yet?"</p>
+            <hr>
+
+            <p><b>12.</b> <a href="http://just-dnslookup.com/" id="justdns"
+            name="justdns" target="_blank">Just DNS Lookup</a><br />
+            - Checks 29 locations, worldwide.</p>
+        </div>
+    </div><script src=
+    "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>
+
+    function checkbox_link_updater() {
+    var checkbox = document.getElementById("populate_propchkrs");
+    var u_input = $("#user_input")[0].value;
+    if (checkbox.checked == true) {
+        wayback.href="http://web.archive.org/web/*/" +
+        u_input;
+
+        whatsmydns.href="https://www.whatsmydns.net/#NS/" +
+        u_input;
+
+        viewdns.href="http://www.viewdns.info/propagation/?domain=" +
+        u_input;
+
+        ceipam.href="http://ceipam.eu/en/dnslookup.php?q=" +
+        u_input +
+        "&t=ns&start=y&local=y&customdns=&4FreeDNS=y&EuroNS=y&COMODO=y&EUROWEB=y&GTS=y&GOOGLE=y&HOSTNET=y&HurricaneElectric=y&LEVEL-3=y&OPENDNS=y&RDS=y&ROMTELECOM=y&UltraDNS=y&UPC=y&VODAFONE=y";
+        
+        preshweb.href="http://www.preshweb.co.uk/cgi-bin/dns-propagation-tracker.pl?domain=" +
+        u_input +
+        "&type=NS&serversmode=ownns&servers=&nsdomain=";
+
+        nexcess.href="http://www.nexcess.net/resources/tools/global-dns-checker/?h=" +
+        u_input + 
+        "&t=NS";
+
+        mobnet.href="http://www.mob.net/~ted/tools/dns.php3?domain=" +
+        u_input;
+
+        justping.href="http://cloudmonitor.ca.com/en/ping.php?vtt=1400382023&varghost=" +
+        u_input +
+        "&vhost=_&vaction=ping&ping=start";
+
+        justdns.href="http://cloudmonitor.ca.com/en/dnstool.php?vhost=_&vtt=1400380893&varghost=" +
+        u_input +
+        "&vaction=trace&trace=analyze";
+    }
+    else if (checkbox.checked == false) {
+        wayback.href="http://archive.org/web/";
+        whatsmydns.href="http://www.whatsmydns.net/";
+        viewdns.href="http://www.viewdns.info/propagation/";
+        ceipam.href="http://ceipam.eu/en/dnslookup.php";
+        preshweb.href="http://www.preshweb.co.uk/cgi-bin/dns-propagation-tracker.pl?";
+        nexcess.href="http://www.nexcess.net/global-dns-checker/";
+        mobnet.href="http://www.mob.net/~ted/tools/dns.php3";
+        justping.href="http://just-ping.com/";
+        justdns.href="http://just-dnslookup.com/";
+    }
+    else {
+        console.log("Issue with pre_pop_prop_chckrs, .checked is " + checkbox.checked);
+        whatsmydns.href="http://www.whatsmydns.net/";
+        viewdns.href="http://www.viewdns.info/propagation/";
+        ceipam.href="http://ceipam.eu/en/dnslookup.php";
+        preshweb.href="http://www.preshweb.co.uk/cgi-bin/dns-propagation-tracker.pl?";
+        nexcess.href="http://www.nexcess.net/global-dns-checker/";
+        mobnet.href="http://www.mob.net/~ted/tools/dns.php3";
+        justping.href="http://just-ping.com/";
+        justdns.href="http://just-dnslookup.com/";
+    };
+    };
+
+    window.onload = function() {
+        self.location.href="#top";
+        var checkbox = document.getElementById("populate_propchkrs");
+        console.log("Window loaded...");
+        checkbox.addEventListener("change", function () {
+        console.log("Event triggered...");
+        var u_input = $("#user_input")[0].value;
+        var whatsmydns = document.getElementById("whatsmydns");
+        var viewdns = document.getElementById("viewdns");
+        var ceipam = document.getElementById("ceipam");
+        var preshweb = document.getElementById("preshweb");
+        var nexcess = document.getElementById("nexcess");
+        var mobnet = document.getElementById("mobnet");
+        var justping = document.getElementById("justping");
+        var justdns = document.getElementById("justdns");
+        var wayback = document.getElementById("wayback");
+        checkbox_link_updater();
+    });
+    };
+
+    $(document).ready(function() {
+        $("#user_input").keydown(function(e) {
+        if(e.keyCode == 13) {
+            useInput();
+        };
+    });});
+
+     function showMenu() {
+     var menu_shown_box = document.getElementById("menu_box");
+     var show_menu_button = document.getElementById("show_menu_button");
+     menu_shown_box.style.display="block";
+     menu_shown_box.style.visibility="visible";
+     show_menu_button.style.display="none";
+     show_menu_button.style.visibility="hidden";
+     };
+
+     function hideMenu() {
+     var menu_shown_box = document.getElementById("menu_box");
+     var show_menu_button = document.getElementById("show_menu_button");
+     menu_shown_box.style.display="none";
+     menu_shown_box.style.visibility="hidden";
+     show_menu_button.style.display="block";
+     show_menu_button.style.visibility="visible";
+     };
+
+    function useInput() {
+    var u_input = $("#user_input")[0].value;
+
+    var digweb = "http://digwebinterface.com/?hostnames=" +
+    u_input +
+    "&type=A&useresolver=8.8.4.4&ns=all&nameservers=";
+
+    var mxtool = "http://mxtoolbox.com/SuperTool.aspx?action=mx%3a" +
+    u_input +
+    "&run=toolpage";
+
+    var whois = "http://who.is/whois/" +
+    u_input;
+
+    var myip = "http://myip.ms/" +
+    u_input;
+
+    var isitdown = "http://www.isitdownrightnow.com/" +
+    u_input + 
+    ".html";
+
+    var domaintools = "http://whois.domaintools.com/" +
+    u_input;
+
+    var intodns = "http://www.intodns.com/" +
+    u_input
+
+    document.getElementById("current_check").innerHTML="Currently " +
+    "checking " +
+    "<h1>" +
+    u_input + 
+    "<\/h1>";
+    window.open(digweb,"dig");
+    window.open(mxtool,"mx");
+    window.open(whois,"who");
+    window.open(myip,"myip");
+    window.open(isitdown,"isitdown");
+    window.open(domaintools,"domaintools");
+    window.open(intodns,"intodns");
+    checkbox_link_updater();
+    self.location.href="#top";
+    };
+    self.location.href="#top";
+    </script>
+</body>
+</html>
+

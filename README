@@ -1,0 +1,11 @@
+|============================|
+|      DNS TS TOOLBELT       |
+| DNS CHECKER AGGREGATE TOOL |
+|============================|
+|____________________________|
+
+#by Dan Schatzman
+
+This project is meant to improve the efficiency
+and speed with which our wcc agents are able to
+investigate and troubleshoot domain/DNS issues.
